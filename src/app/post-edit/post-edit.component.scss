@@ -6,3 +6,11 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+form input {
+  width: 100%;
+  display: inline-block;
+}
+form textarea {
+  width: 100%;
+  display: inline-block;
+}

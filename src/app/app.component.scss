@@ -6,3 +6,17 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+.navbar {
+  width: 25%;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: inline-block;
+}
+.navbar:hover {
+  color: #0000ff;
+  background-color: #fff;
+}
+

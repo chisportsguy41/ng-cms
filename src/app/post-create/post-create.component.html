@@ -1,31 +1,32 @@
-<h3>Create a New Post</h3>
+<h1>Create a New Post</h1>
 
 <form (ngSubmit)="onSubmit()" #createPost="ngForm">
 
   <div *ngIf="errorMessage">{{errorMessage}}</div>
 
   <div>
-    <label for="title">Title: </label>
+    <label for="title">Title</label>
     <input [(ngModel)]="post.title" type="text" name="title" id="title">
     <div *ngIf="errors.title">{{errors.title.message}}</div>
   </div>
-
+  <br>
   <div>
-    <label for="body">Body: </label>
-    <input [(ngModel)]="post.body" type="text" name="body" id="body">
+    <label for="body">Body</label>
+    <textarea [(ngModel)]="post.body" rows="15"
+    name="body" id="body"></textarea>
     <div *ngIf="errors.body">{{errors.body.message}}</div>
   </div>
-
+  <br>
   <div>
-    <label for="description">Description: </label>
+    <label for="description">Description</label>
     <input [(ngModel)]="post.description" type="text" name="description" id="description">
   </div>
-
+  <br>
   <div>
-    <label for="keywords">Keywords: </label>
+    <label for="keywords">Keywords</label>
     <input [(ngModel)]="post.keywords" type="text" name="keywords" id="keywords">
   </div>
-
+  <br>
   <button type="submit">Submit</button>
 
 </form>

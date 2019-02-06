@@ -1,4 +1,11 @@
-.post {
+.navLink {
   color: rgb(26, 73, 5);
-
+}
+.navLink:hover {
+  background: rgb(26, 73, 5);
+  color: #fff;
+}
+ul {
+  list-style-type: none;
+  margin-left: -10px;
 }
