@@ -7,6 +7,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import { PostCreateComponent } from './post-create/post-create.component';
+import { PostEditComponent } from './post-edit/post-edit.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'users/edit/:id', component: UserEditComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'posts/view/:slug', component: PostViewComponent },
-  { path: 'posts/create', component: PostCreateComponent }
+  { path: 'posts/create', component: PostCreateComponent },
+  { path: 'posts/edit/:slug', component: PostEditComponent }
 ];
 
 @NgModule({
