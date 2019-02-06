@@ -2,6 +2,18 @@
   <h1>{{user.first_name}} {{user.last_name}}</h1>
   <div><strong>Username:</strong> {{user.username}}</div>
   <div><strong>Email:</strong> {{user.email}}</div>
-  <button [routerLink]="['/users/edit/', user._id]">Edit</button>
-  <button (click)="deleteUser(user._id)">Delete</button>
+  <div *ngIf="posts">
+    <div *ngIf="posts[0]">
+      <h2>Posts by {{user.first_name}} {{user.last_name}}</h2>
+      <ul>
+        <li *ngFor="let post of posts">
+          <h3><a [routerLink]="['/posts/view/', post.slug]" class="navLink">{{post.title}}</a></h3>
+          <p>{{ post.description }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+  <button [routerLink]="['/users/edit/', user._id]">Edit User</button>
+  <button (click)="deleteUser(user._id)">Delete User</button>
 </div>

@@ -1,6 +1,7 @@
 <div *ngIf="post">
-  <h3>{{ post.title }}</h3>
-  <p><em>{{post.userID}}</em></p>
+  <h1>{{ post.title }}</h1>
+  <p *ngIf="author"><em>By <a
+    [routerLink]="['/users/view/', author._id]">{{author.first_name}} {{author.last_name}}</a></em></p>
   <hr>
   <p>{{post.body}}</p>
   <button [routerLink]="['/posts/edit/', post.slug]">Edit</button>

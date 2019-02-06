@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 
 import { PostsService } from '../posts.service';
 import { Post } from '../post';
+import { UsersService } from '../users.service';
+import { User } from '../users';
 
 @Component({
   selector: 'app-post-view',
@@ -12,11 +14,14 @@ import { Post } from '../post';
 })
 export class PostViewComponent implements OnInit {
   post: Post;
+  author: User;
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private postsService: PostsService
+    private postsService: PostsService,
+    private usersService: UsersService
   ) { }
 
   ngOnInit() {
@@ -27,7 +32,18 @@ export class PostViewComponent implements OnInit {
   getPost(slug:string) {
     this.postsService.getPost(slug).subscribe(
       (response:any) => {
-        this.post = response.post
+        this.post = response.post,
+        this.id = response.post.userID,
+        this.getAuthor(this.id)
+      }
+    );
+  }
+
+  getAuthor(userID: string): void {
+    this.usersService.getUser(userID).subscribe(
+      (response:any) => {
+        this.author = response.user,
+        console.log(this.author)
       }
     );
   }

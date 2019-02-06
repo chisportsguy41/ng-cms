@@ -6,3 +6,10 @@ button {
   cursor: pointer;
   font-weight: bold;
 }
+a {
+  color: rgb(26, 73, 5);
+}
+a:hover {
+  background: rgb(26, 73, 5);
+  color: #fff;
+}
