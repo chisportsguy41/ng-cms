@@ -29,4 +29,16 @@ export class PostsService {
     return this.http.get<Post>(`${this.url}/${slug}`);
   }
 
+  createPost (post: Post): Observable<Post> {
+    return this.http.post<Post>(this.url, post, httpOptions);
+  }
+
+  editPost (post: Post): Observable<Post> {
+    return this.http.put<Post>(this.url, post, httpOptions);
+  }
+
+  deletePost (id: string): Observable<Post> {
+    return this.http.delete<Post>(`${this.url}/${id}`);
+  }
+
 }

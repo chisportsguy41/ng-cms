@@ -3,4 +3,6 @@
   <p><em>{{post.userID}}</em></p>
   <hr>
   <p>{{post.body}}</p>
+  <button [routerLink]="['/posts/edit/', post.slug]">Edit</button>
+  <button (click)="deletePost(post._id)">Delete</button>
 </div>

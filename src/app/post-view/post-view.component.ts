@@ -32,6 +32,12 @@ export class PostViewComponent implements OnInit {
     );
   }
 
-
+  deletePost(id: string): void {
+    if(confirm("Are you sure you want to delete " + this.post.title + "?")) {
+      this.postsService.deletePost(id).subscribe(
+        ()=>{this.router.navigate(['/posts'])}
+      );
+    }
+  }
 
 }
