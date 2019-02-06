@@ -13,6 +13,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PostEditComponent } from './post-edit/post-edit.component';
     PostsComponent,
     PostViewComponent,
     PostCreateComponent,
-    PostEditComponent
+    PostEditComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

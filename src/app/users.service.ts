@@ -20,30 +20,35 @@ const httpOptions = {
 export class UsersService {
 
   //4. Set up the URL
-  private url: string = 'http://localhost:3000/api/users';
+  private urlUsers: string = 'http://localhost:3000/api/users';
+  private urlLogIn: string = 'http://loc.mean.example.com/api/auth/login';
 
   //5. Call the HttpClient in the Constructor
   constructor(private http: HttpClient) { }
 
   //6. Set up a simple observable.
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.url);
+    return this.http.get<User[]>(this.urlUsers);
   }
 
   getUser(id: string): Observable<User> {
-    return this.http.get<User>(`${this.url}/${id}`);
+    return this.http.get<User>(`${this.urlUsers}/${id}`);
   }
 
   createUser (user: User): Observable<User> {
-    return this.http.post<User>(this.url, user, httpOptions);
+    return this.http.post<User>(this.urlUsers, user, httpOptions);
   }
 
   editUser (user: User): Observable<User> {
-    return this.http.put<User>(this.url, user, httpOptions);
+    return this.http.put<User>(this.urlUsers, user, httpOptions);
   }
 
   deleteUser (id: string): Observable<User> {
-    return this.http.delete<User>(`${this.url}/${id}`);
+    return this.http.delete<User>(`${this.urlUsers}/${id}`);
+  }
+
+  logIn(user: User): Observable<User> {
+    return this.http.post<User>(this.urlLogIn, user, httpOptions);
   }
 
 }

@@ -8,6 +8,7 @@ import { PostsComponent } from './posts/posts.component';
 import { PostViewComponent } from './post-view/post-view.component';
 import { PostCreateComponent } from './post-create/post-create.component';
 import { PostEditComponent } from './post-edit/post-edit.component';
+import { AuthComponent} from './auth/auth.component';
 
 const routes: Routes = [
   { path: 'users', component: UsersComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'posts', component: PostsComponent },
   { path: 'posts/view/:slug', component: PostViewComponent },
   { path: 'posts/create', component: PostCreateComponent },
-  { path: 'posts/edit/:slug', component: PostEditComponent }
+  { path: 'posts/edit/:slug', component: PostEditComponent },
+  { path: 'login', component: AuthComponent }
 ];
 
 @NgModule({

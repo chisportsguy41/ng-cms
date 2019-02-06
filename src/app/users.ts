@@ -5,4 +5,5 @@ export class User {
   last_name: string;
   username: string;
   admin: boolean;
+  password: string;
 }
