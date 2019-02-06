@@ -25,4 +25,8 @@ export class PostsService {
     return this.http.get<Post[]>(this.url);
   }
 
+  getPost(slug: string): Observable<Post> {
+    return this.http.get<Post>(`${this.url}/${slug}`);
+  }
+
 }

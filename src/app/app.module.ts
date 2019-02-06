@@ -10,6 +10,7 @@ import { UserViewComponent } from './user-view/user-view.component';
 import { UserCreateComponent } from './user-create/user-create.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { PostsComponent } from './posts/posts.component';
+import { PostViewComponent } from './post-view/post-view.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PostsComponent } from './posts/posts.component';
     UserViewComponent,
     UserCreateComponent,
     UserEditComponent,
-    PostsComponent
+    PostsComponent,
+    PostViewComponent
   ],
   imports: [
     BrowserModule,
