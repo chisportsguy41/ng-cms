@@ -14,8 +14,6 @@ export class AuthComponent implements OnInit {
   user = new User();
   errors: Array<any> = [];
   errorMessage: string;
-  username: string;
-  password: string;
 
   constructor(
     private usersService: UsersService,
@@ -37,8 +35,6 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.user.username = this.username;
-    this.user.password = this.password;
     this.usersService.logIn(this.user).subscribe(
       (response) => {
         this.response(response)

@@ -21,7 +21,7 @@ export class UsersService {
 
   //4. Set up the URL
   private urlUsers: string = 'http://localhost:3000/api/users';
-  private urlLogIn: string = 'http://loc.mean.example.com/api/auth/login';
+  private urlLogIn: string = 'http://localhost:3000/api/auth/login';
 
   //5. Call the HttpClient in the Constructor
   constructor(private http: HttpClient) { }

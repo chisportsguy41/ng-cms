@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+import { UsersService } from './users.service';
+import { PostsService } from './posts.service';
 import { UsersComponent } from './users/users.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { UserCreateComponent } from './user-create/user-create.component';
@@ -34,7 +37,7 @@ import { AuthComponent } from './auth/auth.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [UsersService, PostsService, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

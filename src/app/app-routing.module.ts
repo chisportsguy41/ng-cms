@@ -11,6 +11,7 @@ import { PostEditComponent } from './post-edit/post-edit.component';
 import { AuthComponent} from './auth/auth.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
   { path: 'users', component: UsersComponent },
   { path: 'users/view/:id', component: UserViewComponent },
   { path: 'users/create', component: UserCreateComponent },
